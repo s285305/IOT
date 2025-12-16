@@ -2,9 +2,11 @@
   "gateways": [
     {
       "gateway_id": "gateway1",
+      "gateway_topic": "gateway1", 
       "smart_poles": [
         {
           "pole_id": "palo1",
+          "pole_topic": "gateway1/palo1",
           "sensors": [
             {
                 "sensor_id": "tiltingsensorpalo1",
