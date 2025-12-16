@@ -1,0 +1,30 @@
+{
+  "gateways": [
+    {
+      "gateway_id": "gateway1",
+      "smart_poles": [
+        {
+          "pole_id": "palo1",
+          "sensors": [
+            {
+                "sensor_id": "tiltingsensorpalo1",
+                "sensor_type": "accelerometer",
+                "threshold": 15
+            },
+            {
+                "sensor_id": "tempsensorpalo1",
+                "sensor_type": "thermometer"
+            },
+            {
+                "sensor_id": "humiditysensorpalo1",
+                "sensor_type": "hygrometer"
+            }
+          ],
+          "alarm_topics": [
+             "gateway1/palo1/alarms"
+          ]
+        }
+      ]
+    }
+  ]
+}
