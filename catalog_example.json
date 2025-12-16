@@ -2,28 +2,36 @@
   "gateways": [
     {
       "gateway_id": "gateway1",
-      "gateway_topic": "gateway1", 
+      "gateway_topic": "gateway1",
+      "ip_address": "192.168.1.10", 
+      "port": 8080, 
+      "mqtt_broker": {
+          "address": "192.168.1.50",
+          "port": 1883
+      },
+      "last_update": "2023-10-27T10:00:00Z",
       "smart_poles": [
         {
           "pole_id": "palo1",
           "pole_topic": "gateway1/palo1",
+          "alarm_topics": "gateway1/palo1/alarms",
           "sensors": [
             {
                 "sensor_id": "tiltingsensorpalo1",
                 "sensor_type": "accelerometer",
+                "unit": "degrees", 
                 "threshold": 15
             },
             {
                 "sensor_id": "tempsensorpalo1",
-                "sensor_type": "thermometer"
+                "sensor_type": "thermometer",
+                "unit": "Celsius" 
             },
             {
                 "sensor_id": "humiditysensorpalo1",
-                "sensor_type": "hygrometer"
+                "sensor_type": "hygrometer",
+                "unit": "percent"
             }
-          ],
-          "alarm_topics": [
-             "gateway1/palo1/alarms"
           ]
         }
       ]
