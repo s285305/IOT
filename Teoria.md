@@ -859,7 +859,3 @@ IoT platforms support:
 6. **Technologies:** Python, Web Services, MQTT, RESTful APIs as key tools for IoT development
 
 ---
-
-**End of Lecture Compilation**
-
-*Compiled from 15 lecture presentations delivered by Lorenzo Bottaccioli at Politecnico di Torino*
