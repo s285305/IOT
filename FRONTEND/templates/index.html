@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Utility Poles Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+  <!-- <div id="alert-container"></div> -->
+
+  <!--<aside class="sidebar">
+    <h1 class="logo">PoleMonitor</h1>
+    <nav>
+      <ul>
+        <li class="active" onclick="showView('dashboard-view')">Dashboard</li>
+        <li onclick="showView('alerts-view')">Alert Log</li>
+        <li>Settings</li>
+      </ul>
+    </nav>
+  </aside>-->
+
+  <main class="main" id="dashboard-view">
+
+    <header class="topbar">
+      <h2>Italian Utility Poles Overview</h2>
+      <div class="topbar-actions">
+        <span id="connection-status">● Live</span>
+      </div>
+    </header>
+
+    <section class="stats">
+      <div class="stat-card"><h3>Total Poles</h3><p id="totalPoles">—</p></div>
+      <div class="stat-card healthy"><h3>Healthy</h3><p id="healthyPoles">—</p></div>
+      <div class="stat-card unhealthy"><h3>Alarms</h3><p id="activeAlarms">0</p></div>
+    </section>
+
+    <section class="content-grid">
+      <div class="card map-card">
+        <h3>Poles Map</h3>
+        <div id="map"></div>
+      </div>
+
+      <div class="card details-card">
+        <h3>Pole Details & History</h3>
+        <div id="details">
+          <p id="details-placeholder">Select a pole on the map to see InfluxDB data</p>
+          <div id="pole-info" style="display:none;">
+            <h4 id="selected-pole-id">ID: --</h4>
+            <div id="pole-static"></div>
+            <div id="pole-last"></div>
+            <div class="chart-container">
+            <canvas id="decayChart"></canvas>
+            </div>
+            <div class="chart-container">
+            <canvas id="tiltChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <aside class="alerts-sidebar">
+  <header class="alerts-header">
+    <h3><span class="icon">🔔</span> Recent Alarms</h3>
+    <span class="badge" id="activeAlarmsBadge">0</span>
+  </header>
+  
+  <div id="alert-log">
+    </div>
+  </aside>
+
+  <div id="alert-container" style="display: none;"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="/static/myApp.js"></script>
+</body>
+</html>
